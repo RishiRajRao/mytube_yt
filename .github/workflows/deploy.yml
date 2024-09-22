@@ -27,6 +27,13 @@ jobs:
     - name: Build the project
       run: npm run build  # Assumes `npm run build` is the correct build command
 
+    - name: Debug info
+      run: |
+        echo "Current directory:"
+        pwd
+        echo "Contents:"
+        ls -la
+
     # Step 5: Sync the build to S3
     - uses: jakejarvis/s3-sync-action@v0.5.1
       with:
